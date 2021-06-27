@@ -74,6 +74,8 @@ public final class PartitionTransforms
         String transform = field.transform().toString();
 
         switch (transform) {
+            case "void":
+                return null;
             case "identity":
                 return new ColumnTransform(type, Function.identity());
             case "year":
